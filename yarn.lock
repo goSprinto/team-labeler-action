@@ -917,6 +917,11 @@
     "@typescript-eslint/types" "5.9.1"
     "eslint-visitor-keys" "^3.0.0"
 
+"@vercel/ncc@^0.34.0":
+  "integrity" "sha512-G9h5ZLBJ/V57Ou9vz5hI8pda/YQX5HQszCs3AmIus3XzsmRn/0Ptic5otD3xVST8QLKk7AMk7AqpsyQGN7MZ9A=="
+  "resolved" "https://registry.npmjs.org/@vercel/ncc/-/ncc-0.34.0.tgz"
+  "version" "0.34.0"
+
 "@zeit/ncc@0.22.3":
   "integrity" "sha512-jnCLpLXWuw/PAiJiVbLjA8WBC0IJQbFeUwF4I9M+23MvIxTxk5pD4Q8byQBSPmHQjz5aBoA7AKAElQxMpjrCLQ=="
   "resolved" "https://registry.npmjs.org/@zeit/ncc/-/ncc-0.22.3.tgz"

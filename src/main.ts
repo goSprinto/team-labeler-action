@@ -34,7 +34,6 @@ async function run() {
 
     const labels: string[] = getTeamLabel(labelsConfiguration, `@${author}`)
     const reviewers: string[] = getTeamMembers(labelsConfiguration, `@${author}`)
-    core.info(`Reviewers ${reviewers}`)
 
     if (labels.length > 0) await addLabels(client, prNumber, labels)
     if (reviewers.length > 0) await addReviewers(client, prNumber, reviewers)
