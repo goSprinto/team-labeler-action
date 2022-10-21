@@ -15,7 +15,7 @@ export function getTeamMembers(
   labelsConfiguration: Map<string, string[]>,
   author: string
 ): string[] {
-  core.debug('getTeamMembers')
+  core.setFailed('getTeamMembers')
   for (const [label, authors] of labelsConfiguration.entries()) {
     core.debug('inside loop')
     if (authors.includes(author)) {
