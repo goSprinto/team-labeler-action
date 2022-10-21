@@ -1,3 +1,5 @@
+import * as core from '@actions/core'
+
 export function getTeamLabel(
   labelsConfiguration: Map<string, string[]>,
   author: string
@@ -13,13 +15,14 @@ export function getTeamMembers(
   labelsConfiguration: Map<string, string[]>,
   author: string
 ): string[] {
-  console.info('getTeamMembers')
+  core.debug('getTeamMembers')
   for (const [label, authors] of labelsConfiguration.entries()) {
-    console.info('Loop')
+    core.debug('inside loop')
     if (authors.includes(author)) {
-      console.info(`Authors :${authors}`)
+      core.debug(`authors ${authors}`)
       const filteredAuthors = authors.filter(item => item !== author)
-      console.info(`FilteredAuthors :${filteredAuthors}`)
+      core.debug(`filtered ${filteredAuthors}`)
+      console.log(filteredAuthors)
       return filteredAuthors
     }
   }
