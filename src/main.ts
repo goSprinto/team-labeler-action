@@ -32,8 +32,8 @@ async function run() {
       string[]
     > = await getLabelsConfiguration(client, configPath)
 
-    const labels: string[] = getTeamLabel(labelsConfiguration, `@${author}`)
-    const reviewers: string[] = getTeamMembers(labelsConfiguration, `@${author}`)
+    const labels: string[] = getTeamLabel(labelsConfiguration, `${author}`)
+    const reviewers: string[] = getTeamMembers(labelsConfiguration, `${author}`)
 
     if (labels.length > 0) await addLabels(client, prNumber, labels)
     if (reviewers.length > 0) await addReviewers(client, prNumber, reviewers)

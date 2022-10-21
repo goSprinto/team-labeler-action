@@ -19,16 +19,16 @@ This is useful if multiple team are working on the same project.
 
 ### Create `.github/teams.yml`
 
-You need to provide a yml file that contains members of your teams:
+You need to provide a yml file that contains members(usernames) of your teams:
 
 ```yaml
 LightSide:
-  - '@Yoda'
-  - '@Luke'
+  - 'Yoda'
+  - 'Luke'
 
 DarkSide:
-  - '@DarkVador'
-  - '@Palpatine'
+  - 'DarkVador'
+  - 'Palpatine'
 ```
 
 ## Usage
