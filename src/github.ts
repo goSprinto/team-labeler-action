@@ -93,7 +93,7 @@ export async function addReviewers(
   await client.pulls.createReviewRequest({
     owner: github.context.repo.owner,
     repo: github.context.repo.repo,
-    number: prNumber,
+    pull_number: prNumber,
     reviewers,
   })
 }
