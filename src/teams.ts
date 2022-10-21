@@ -15,9 +15,9 @@ export function getTeamMembers(
 ): string[] {
   for (const [label, authors] of labelsConfiguration.entries())
     if (authors.includes(author)) {
-      console.debug(authors)
+      console.debug(`Authors :${authors}`)
       const filteredAuthors = authors.filter(item => item !== author)
-      console.debug(filteredAuthors)
+      console.debug(`FilteredAuthors :${filteredAuthors}`)
       return filteredAuthors
     }
   return []
