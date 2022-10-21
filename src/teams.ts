@@ -13,12 +13,16 @@ export function getTeamMembers(
   labelsConfiguration: Map<string, string[]>,
   author: string
 ): string[] {
-  for (const [label, authors] of labelsConfiguration.entries())
+  console.info('getTeamMembers')
+  for (const [label, authors] of labelsConfiguration.entries()) {
+    console.info('Loop')
     if (authors.includes(author)) {
       console.info(`Authors :${authors}`)
       const filteredAuthors = authors.filter(item => item !== author)
       console.info(`FilteredAuthors :${filteredAuthors}`)
       return filteredAuthors
     }
+  }
+
   return []
 }
