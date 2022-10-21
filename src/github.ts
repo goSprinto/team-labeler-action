@@ -84,3 +84,16 @@ export async function addLabels(
     labels
   })
 }
+
+export async function addReviewers(
+  client: github.GitHub,
+  prNumber: number,
+  reviewers: string[]
+) {
+  await client.pulls.createReviewRequest({
+    owner: github.context.repo.owner,
+    repo: github.context.repo.repo,
+    number: prNumber,
+    reviewers,
+  })
+}
