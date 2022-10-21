@@ -33,8 +33,6 @@ async function run() {
     > = await getLabelsConfiguration(client, configPath)
 
     const labels: string[] = getTeamLabel(labelsConfiguration, `@${author}`)
-    core.error('Error')
-    core.setFailed('error2')
     const reviewers: string[] = getTeamMembers(labelsConfiguration, `@${author}`)
 
     if (labels.length > 0) await addLabels(client, prNumber, labels)

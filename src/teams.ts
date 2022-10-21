@@ -15,13 +15,13 @@ export function getTeamMembers(
   labelsConfiguration: Map<string, string[]>,
   author: string
 ): string[] {
-  core.setFailed('getTeamMembers')
+  core.info('getTeamMembers')
   for (const [label, authors] of labelsConfiguration.entries()) {
-    core.debug('inside loop')
+    core.info('inside loop')
     if (authors.includes(author)) {
-      core.debug(`authors ${authors}`)
+      core.info(`authors ${authors}`)
       const filteredAuthors = authors.filter(item => item !== author)
-      core.debug(`filtered ${filteredAuthors}`)
+      core.info(`filtered ${filteredAuthors}`)
       console.log(filteredAuthors)
       return filteredAuthors
     }
