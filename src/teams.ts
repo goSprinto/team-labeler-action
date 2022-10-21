@@ -15,9 +15,12 @@ export function getTeamMembers(
   labelsConfiguration: Map<string, string[]>,
   author: string
 ): string[] {
+
   for (const [label, authors] of labelsConfiguration.entries()) {
     if (authors.includes(author)) {
+      core.debug(`${authors} - Authors`)
       const filteredAuthors = authors.filter(item => item !== author)
+      core.debug(`${filteredAuthors} - Filtered Authors`)
       return filteredAuthors
     }
   }
