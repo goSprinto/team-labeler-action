@@ -1,6 +1,6 @@
 name: 'Github Actions for teams - Team labeler action'
-description: "Add a team label based on the author's team"
-author: 'Julien Karst'
+description: "Add a team label & code reviewers based on the author's team"
+author: 'Yash Jhunjhunwala'
 inputs:
   repo-token:
     required: true
