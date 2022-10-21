@@ -149,8 +149,8 @@ async function run() {
         }
         const client = github_1.createClient(token);
         const labelsConfiguration = await github_1.getLabelsConfiguration(client, configPath);
-        const labels = teams_1.getTeamLabel(labelsConfiguration, `@${author}`);
-        const reviewers = teams_1.getTeamMembers(labelsConfiguration, `@${author}`);
+        const labels = teams_1.getTeamLabel(labelsConfiguration, `${author}`);
+        const reviewers = teams_1.getTeamMembers(labelsConfiguration, `${author}`);
         if (labels.length > 0)
             await github_1.addLabels(client, prNumber, labels);
         if (reviewers.length > 0)
