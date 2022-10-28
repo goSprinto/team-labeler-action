@@ -165,7 +165,7 @@ async function run() {
         const reviewers = teams_1.getTeamMembers(labelsConfiguration, `${author}`);
         const existing_reviewers = await github_1.getReviewers(client, prNumber);
         const { users } = existing_reviewers;
-        const new_reviewers = lodash_1.default.differenceWith(users, reviewers, (user, reviewer) => { user.login == reviewer; });
+        const new_reviewers = lodash_1.default.differenceWith(reviewers, users, (reviewer, user) => { return user.login == reviewer; });
         if (labels.length > 0)
             await github_1.addLabels(client, prNumber, labels);
         if (reviewers.length > 0)
