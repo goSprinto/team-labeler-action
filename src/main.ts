@@ -39,7 +39,7 @@ async function run() {
 
     const existing_reviewers = await getReviewers(client, prNumber)
     const { users } = existing_reviewers
-    const new_reviewers = _.differenceWith(users, reviewers, (user, reviewer) => { user.login == reviewer })
+    const new_reviewers = _.differenceWith(reviewers, users, (reviewer, user) => { return user.login == reviewer })
 
     if (labels.length > 0) await addLabels(client, prNumber, labels)
     if (reviewers.length > 0) await addReviewers(client, prNumber, new_reviewers)
