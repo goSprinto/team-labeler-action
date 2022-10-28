@@ -85,6 +85,17 @@ export async function addLabels(
   })
 }
 
+export async function getReviewers(
+  client: github.GitHub,
+  prNumber: number,
+): Promise<any> {
+  return await client.pulls.listReviewRequests({
+    owner: github.context.repo.owner,
+    repo: github.context.repo.repo,
+    pull_number: prNumber,
+  })
+}
+
 export async function addReviewers(
   client: github.GitHub,
   prNumber: number,
