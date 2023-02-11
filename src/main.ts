@@ -35,14 +35,14 @@ async function run() {
     > = await getLabelsConfiguration(client, configPath)
 
     const labels: string[] = getTeamLabel(labelsConfiguration, `${author}`)
-    const reviewers: string[] = getTeamMembers(labelsConfiguration, `${author}`)
-
-    const existing_reviewers = await getReviewers(client, prNumber)
-    const { users } = existing_reviewers
-    const new_reviewers = _.differenceWith(reviewers, users, (reviewer, user) => { return user.login == reviewer })
-
     if (labels.length > 0) await addLabels(client, prNumber, labels)
-    if (reviewers.length > 0) await addReviewers(client, prNumber, new_reviewers)
+
+    //     const reviewers: string[] = getTeamMembers(labelsConfiguration, `${author}`)
+
+    //     const existing_reviewers = await getReviewers(client, prNumber)  
+    //     const { users } = existing_reviewers
+    //     const new_reviewers = _.differenceWith(reviewers, users, (reviewer, user) => { return user.login == reviewer })
+    //     if (reviewers.length > 0) await addReviewers(client, prNumber, new_reviewers)
   } catch (error) {
     core.error(error)
     core.setFailed(error.message)
